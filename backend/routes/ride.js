@@ -2,6 +2,20 @@ const express = require('express');
 const router = express.Router();
 const Ride = require('../models/ride');
 const User = require('../models/User');
+const mongoose = require("mongoose");
+
+const rideSchema = new mongoose.Schema({
+  driverId: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true }, // Reference to User model
+  from: { type: String, required: true },
+  to: { type: String, required: true },
+  date: { type: Date, required: true },
+  seatsAvailable: { type: Number, required: true },
+  genderPreference: { type: String, default: "Any" },
+  price: { type: Number, required: true },
+  passengers: { type: [String], default: [] },
+});
+
+module.exports = mongoose.model("Ride", rideSchema);
 
 // Create a new ride
 router.post('/create', async (req, res) => {

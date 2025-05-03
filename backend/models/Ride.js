@@ -1,14 +1,14 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const rideSchema = new mongoose.Schema({
-  driver: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+  driverId: { type: String, required: true },
   from: { type: String, required: true },
   to: { type: String, required: true },
   date: { type: Date, required: true },
   seatsAvailable: { type: Number, required: true },
-  genderPreference: { type: String, enum: ['Any', 'Male', 'Female'], default: 'Any' },
-  passengers: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
-  price: { type: Number, required: true }
-}, { timestamps: true });
+  genderPreference: { type: String, default: "Any" },
+  price: { type: Number, required: true },
+  passengers: { type: [String], default: [] },
+});
 
-module.exports = mongoose.model('Ride', rideSchema);
+module.exports = mongoose.model("Ride", rideSchema);
