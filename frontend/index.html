@@ -1,13 +1,35 @@
-<!-- frontend/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CampusCab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CampusCab - Home</title>
+  <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-  <h1>Welcome to CampusCab</h1>
-  <a href="signup.html">Sign Up</a> |
-  <a href="login.html">Log In</a>
+
+  <header>
+    <h1>Welcome to CampusCab</h1>
+    <h2>Your College Ride-Sharing Solution</h2>
+  </header>
+
+  <main>
+    <div class="card">
+      <h3>Ride Sharing Made Easy</h3>
+      <p>Find a ride or offer a ride for your college commute. Share rides with other students and save costs!</p>
+      <button onclick="window.location.href='login.html'">Login</button>
+    </div>
+
+    <div class="card">
+      <h3>Sign Up to Start Sharing</h3>
+      <p>Sign up today to start sharing rides with fellow students and manage your travel expenses seamlessly.</p>
+      <button onclick="window.location.href='signup.html'">Sign Up</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 CampusCab | <a href="#">Privacy Policy</a></p>
+  </footer>
+
 </body>
 </html>
