@@ -1,27 +1,29 @@
 <!-- frontend/dashboard.html -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>CampusCab Dashboard</title>
-  <link rel="stylesheet" href="css/dashboard.css">
-</head>
-<body>
-  <h2>Welcome to CampusCab</h2>
-  <button onclick="logout()">Logout</button>
+  <head>
+    <meta charset="UTF-8" />
+    <title>CampusCab Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css" />
+  </head>
+  <body>
+    <h2>Welcome to CampusCab</h2>
+    <button onclick="logout()">Logout</button>
 
-  <h3>Create Ride</h3>
-  <form id="createRideForm">
-    <input type="text" id="from" placeholder="From" required>
-    <input type="text" id="to" placeholder="To" required>
-    <input type="datetime-local" id="time" required>
-    <input type="number" id="availableSeats" placeholder="Available Seats" required>
-    <button type="submit">Create Ride</button>
-  </form>
+    <h3>Create Ride</h3>
+<form id="createRideForm">
+  <input type="text" id="from" placeholder="From" required>
+  <input type="text" id="to" placeholder="To" required>
+  <input type="datetime-local" id="time" required>
+  <input type="number" id="availableSeats" placeholder="Available Seats" required>
+  <input type="number" id="price" placeholder="Price" required>
+  <button type="submit">Create Ride</button>
+</form>
 
-  <h3>Available Rides</h3>
-  <div id="ridesList"></div>
+    <h3>Available Rides</h3>
+    <button onclick="fetchAvailableRides()">Show Available Rides</button>
+    <div id="ride-container"></div>
 
-  <script src="js/dashboard.js"></script>
-</body>
+    <script src="js/dashboard.js"></script>
+  </body>
 </html>
