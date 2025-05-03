@@ -1,0 +1,26 @@
+<!-- frontend/dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CampusCab Dashboard</title>
+</head>
+<body>
+  <h2>Welcome to CampusCab</h2>
+  <button onclick="logout()">Logout</button>
+
+  <h3>Create Ride</h3>
+  <form id="createRideForm">
+    <input type="text" id="from" placeholder="From" required>
+    <input type="text" id="to" placeholder="To" required>
+    <input type="datetime-local" id="time" required>
+    <input type="number" id="availableSeats" placeholder="Available Seats" required>
+    <button type="submit">Create Ride</button>
+  </form>
+
+  <h3>Available Rides</h3>
+  <div id="ridesList"></div>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
