@@ -11,13 +11,13 @@ mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
-.then(() => console.log('MongoDB connected (local)'))
+.then(() => console.log('MongoDB connected'))
 .catch((err) => console.log(err));
 
-app.get('/', (req, res) => {
-  res.send('CampusCab backend is running');
-});
+// Routes
+const authRoutes = require('./routes/auth');
+app.use('/api/auth', authRoutes);
 
 app.listen(process.env.PORT, () => {
-  console.log(`Server started on port ${process.env.PORT}`);
+  console.log(`Server running on port ${process.env.PORT}`);
 });
